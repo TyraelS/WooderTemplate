@@ -1,0 +1,116 @@
+@import "_vars";
+@import "_media";
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  background-color: black;
+  font-family: $regular;
+}
+
+a{
+  text-decoration: none;
+}
+
+header{
+  padding: 10px 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sidebarToggle{
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: color 0.1s ease-in-out;
+  color: $gray;
+  & .toggleButton{
+    width: 30px;
+    height: 30px;
+    margin: 10px 5px 10px 15px;
+  }
+  & p{
+    font-size: 12px;
+    font-family: $bold;
+    text-transform: uppercase;
+  }
+  &:hover{
+    color: white;
+    transition: color 0.1s ease-in-out;
+  }
+}
+
+.navbar{
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  & > a{
+    width: 40%;
+    font-family: $bold;
+    text-transform: uppercase;
+    font-size: 32px;
+    color: $white;
+    letter-spacing: 7px;
+  }
+  & .linethrough{
+    transform: translate(36.7px, 17.5px);
+    background: $brown;
+    width: 54px;
+    height: 4px;
+  }
+  & ul{
+    font-size: 12px;
+    width: 60%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    & li a{
+      text-transform: uppercase;
+      color: $gray;
+      font-family: $bold;
+      transition: 0.1s ease-in-out;
+      &:hover{
+        color: $white;
+        transition: 0.1s ease-in-out;
+      }
+    }
+  }
+}
+
+.language{
+  font-size: 12px;
+  margin: 10px 15px 10px 5px;
+  color: $gray;
+  cursor: pointer;
+  transition: 0.1s ease-in-out;
+  & i{ 
+    color: $brown;
+  }
+  & ul{
+    display: block;
+    overflow: hidden;
+    height:0;
+    &.visible{ 
+      overflow: visible;
+    }
+    & li{
+      transition: 0.1s ease-in-out;
+      color: $gray;
+    }
+    & li:hover{
+      color: $white;
+      transition: 0.1s ease-in-out;
+    }
+  }
+  &:hover{
+    color: $white;
+    transition: 0.1s ease-in-out;
+  }
+}
