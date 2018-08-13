@@ -14,8 +14,36 @@ a{
   text-decoration: none;
 }
 
+h1, h2, h3{
+  text-transform: uppercase;
+  font-family: $bold;
+}
+
+.sidebar, header, .hero{
+  user-select: none;
+}
+
+::selection{
+  color: $white;
+  background-color: $brown;
+}
+
+::-webkit-scrollbar{
+  width: 10px;
+}
+
+::-webkit-scrollbar-track{
+  // background: rgba(255, 255, 255, 0);
+  background: black;
+}
+
+::-webkit-scrollbar-thumb{
+  background: $brown;
+}
+// SIDEBAR START
+
 .sidebar {
-  z-index: 2;
+  z-index: 3;
   position: fixed;
   left: -241px;
   height: 100%;
@@ -54,6 +82,7 @@ a{
     text-transform: uppercase;
     font-family: $bold;
     font-size: 18px;
+    letter-spacing: 5px;
     & a {
       color: $brown;
     }
@@ -71,7 +100,15 @@ a{
   }
 }
 
+
+// SIDEBAR END
+
+
+// HEADER START
+
 header{
+  z-index: 2;
+  position: absolute;
   padding: 10px 0;
   width: 100%;
   height: 70px;
@@ -174,5 +211,135 @@ header{
     transition: 0.1s ease-in-out;
   }
 }
+
+
+// HEADER END
+
+// HERO START
+
+
+.hero{
+  position: relative;
+  width: 100%;
+  height: 100vh;
+
+  & .background-image{
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    & .image-main{
+      flex-basis: 60%;
+      height: 100%;
+      background-image: url('../assets/img/Untitled-1.png');
+      background-size: cover;
+    }
+    & .image-secondary{
+      flex-basis: 40%;
+      height: calc(100% + 40px);
+      background-image: url('../assets/img/Untitled-2.png');
+      background-size: cover;
+    }
+  }
+
+  & .hero-content{
+    z-index: 3;
+    width: 1280px;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+    & .mouse-scroll{
+      height: 135px;
+      flex-basis: 25%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      & .mouse-scroll-icon img{
+        width: 30px;
+        animation: arrowAnimation 1s infinite;
+      }
+      & .arrow-icon img{
+        width: 30px;
+      }
+      @keyframes arrowAnimation{
+        0%{
+          margin-top: 0;
+        }
+        50%{
+          margin-top: 5px;
+        }
+        75%{
+          margin-top: 0;
+        }
+        100%{
+          margin-top: 0;
+        }
+      }
+      & .scroll-paragraph{
+        margin-top: 30px;
+        transform: rotate(90deg);
+        color: #3b3b3a;
+        font-size: 12px;
+        letter-spacing: 3px;
+      }
+    }
+    & .hero-text{
+      flex-basis: 45%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      & .title{
+        font-size: 96px;
+        color: $brown;
+        letter-spacing: 16px;
+        padding: 0 0 30px;
+      }
+      & .link-button{
+        cursor: pointer;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        border: 2px solid $white;
+        color: $white;
+        letter-spacing: 3px;
+        font-size: 12px;
+        padding: 10px 0;
+        width: 300px;
+        & img{
+          height: 30px;
+          margin-left: 5px;
+          transition: 0.2s ease-in;
+        }
+        &:hover img{
+          padding-left: 20px;
+          transition: 0.2s ease-in;
+        }
+      }
+    }
+    & .hero-side-text{
+      flex-basis: 25%;
+      text-align: center;
+      color: $darkBrown;
+      font-size: 12px;
+      letter-spacing: 3px;
+      padding-top: 30px;
+      
+      & h3{
+        transform: rotate(90deg);
+      }
+    }
+  }
+}
+
+//HERO END
 
 @import "_media";
