@@ -1,0 +1,39 @@
+@import '_vars';
+@import '_fonts';
+
+@media screen and (max-width: 1280px){
+    .navbar{
+      flex-basis: 50%;
+      justify-content: space-around;
+      & > a {
+        flex-basis: 35%;
+      }
+      & ul {
+        flex-basis: 65%;
+        justify-content: space-around;
+      }
+    }
+}
+
+@media screen and (max-width: 880px){
+  .navbar{
+    width: auto;
+  }
+  .navbar ul{
+    display: none;
+  }
+}
+
+@media screen and(max-width: 550px){
+  .sidebar{
+    width: 100%;
+    left: -100vw;
+    & ul {
+      margin: 0;
+      align-items: center;
+    }
+  }
+  header .sidebarToggle p{
+    display: none;
+  }
+}
